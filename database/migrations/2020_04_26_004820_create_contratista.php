@@ -21,6 +21,8 @@ class CreateContratista extends Migration
             $table->string('correo', 50)->unique();
             $table->string('telefono');
             $table->string('representante_legal');
+
+            $table->string('imagen_firma')->nullable();
             $table->timestamps();
 
             $table->foreign('id_ciudad')->references('id_ciudad')->on('ciudad');

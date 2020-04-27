@@ -19,9 +19,9 @@ class CreateUsuario extends Migration
             $table->string('cargo');
             $table->string('correo', 50)->unique();
             $table->string('telefono');
+            $table->string('contrasenia');
             $table->unsignedBigInteger('id_area');
             $table->timestamps();
-
             //FKs
             $table->foreign('id_area')->references('id_area')->on('area');
         });
