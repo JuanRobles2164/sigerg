@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateTipoDocumento extends Migration
@@ -18,6 +19,15 @@ class CreateTipoDocumento extends Migration
             $table->string('tipo_documento');
             $table->timestamps();
         });
+        DB::table('tipo_documento')
+        ->insert([
+            ['tipo_documento' => 'Equipos cálidos', 'created_at' => date('Y-m-d')],
+            ['tipo_documento' => 'Refrigeración', 'created_at' => date('Y-m-d')],
+            ['tipo_documento' => 'Tanque de Agua', 'created_at' => date('Y-m-d')],
+            ['tipo_documento' => 'Trampa de grasa', 'created_at' => date('Y-m-d')],
+            ['tipo_documento' => 'Verificación de temperaturas', 'created_at' => date('Y-m-d')],
+            ['tipo_documento' => 'Revisión de solicitudes de mantenimiento', 'created_at' => date('Y-m-d')]
+        ]);
     }
 
     /**

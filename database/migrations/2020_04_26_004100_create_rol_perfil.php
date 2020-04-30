@@ -17,7 +17,7 @@ class CreateRolPerfil extends Migration
             $table->bigIncrements('id_rol_perfil');
             $table->unsignedBigInteger('id_usuario');
             $table->unsignedBigInteger('id_rol');
-            $table->unsignedBigInteger('id_perfil');
+            $table->unsignedBigInteger('id_perfil')->nullable();
             $table->timestamps();
 
             //FKs

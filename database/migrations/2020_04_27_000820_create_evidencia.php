@@ -15,19 +15,15 @@ class CreateEvidencia extends Migration
     {
         Schema::create('evidencia', function (Blueprint $table) {
             $table->bigIncrements('id_evidencia');
-            $table->boolean('cumple')->default(false);
-            /*
             $table->boolean('plagas')->default(false);
             $table->boolean('bpm')->default(false);
             $table->boolean('capacitacion')->default(false);
             $table->boolean('aseguramiento')->default(false);
             $table->boolean('mantenimiento')->default(false);
-            */ 
-            $table->unsignedBigInteger('id_tipo_de_evidencia');
+            
             $table->unsignedBigInteger('id_visita');
             $table->timestamps();
             //FKs
-            $table->foreign('id_tipo_de_evidencia')->references('id_tipo_de_evidencia')->on('tipo_de_evidencia');
             $table->foreign('id_visita')->references('id_visita')->on('visita');
         });
     }

@@ -19,10 +19,12 @@ class CreateRestaurante extends Migration
             $table->unsignedBigInteger('id_empresa');
             $table->unsignedBigInteger('id_ciudad');
             $table->timestamps();
+            $table->unsignedBigInteger('id_usuario'); //Dueño del restaurante
 
             //FKs
             $table->foreign('id_empresa')->references('id_empresa')->on('empresa');
             $table->foreign('id_ciudad')->references('id_ciudad')->on('ciudad');
+            $table->foreign('id_usuario')->references('id_usuario')->on('usuario');
         });
     }
 

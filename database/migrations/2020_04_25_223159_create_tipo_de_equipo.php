@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClaseDeMantenimiento extends Migration
+class CreateTipoDeEquipo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateClaseDeMantenimiento extends Migration
      */
     public function up()
     {
-        Schema::create('clase_de_mantenimiento', function (Blueprint $table) {
-            $table->bigIncrements('id_clase_de_mantenimiento');
-            $table->string('clase_de_mantenimiento');
+        Schema::create('tipo_de_equipo', function (Blueprint $table) {
+            $table->bigIncrements('id_tipo_de_equipo');
+            $table->string('tipo_de_equipo');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateClaseDeMantenimiento extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clase_de_mantenimiento');
+        Schema::dropIfExists('tipo_de_equipo');
     }
 }

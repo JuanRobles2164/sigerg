@@ -17,9 +17,11 @@ class CreateVisita extends Migration
             $table->bigIncrements('id_visita');
             $table->string('imagen_acta');
             $table->string('observaciones');
+            $table->date('fecha_visita_programada');
+            $table->date('fecha_visita_real');
             $table->unsignedBigInteger('id_ente');
             $table->timestamps();
-
+            //FKs
             $table->foreign('id_ente')->references('id_ente')->on('ente');
         });
     }
