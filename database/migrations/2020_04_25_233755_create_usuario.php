@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateUsuario extends Migration
@@ -20,11 +21,20 @@ class CreateUsuario extends Migration
             $table->string('correo', 50)->unique();
             $table->string('telefono');
             $table->string('contrasenia');
-            $table->unsignedBigInteger('id_area');
+            $table->unsignedBigInteger('id_area')->nullable();
             $table->timestamps();
             //FKs
             $table->foreign('id_area')->references('id_area')->on('area');
         });
+        DB::table('usuario')
+        ->insert([
+            'usuario' => 'Armando',
+            'cargo' => 'Jefe de desarrollo',
+            'correo' => 'armando@sistema.com',
+            'telefono' => '123456',
+            'contrasenia' => 'a2020',
+            'created_at' => date('Y-m-d')
+        ]);
     }
 
     /**
