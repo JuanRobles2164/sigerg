@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Utilities\Util;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +17,9 @@ class CreateUsuario extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
             $table->bigIncrements('id_usuario');
-            $table->string('usuario', 50)->unique();
+            $table->string('usuario');
+            $table->string('nombres')->nullable();
+            $table->string('apellidos')->nullable();
             $table->string('cargo');
             $table->string('correo', 50)->unique();
             $table->string('telefono');
@@ -29,10 +32,12 @@ class CreateUsuario extends Migration
         DB::table('usuario')
         ->insert([
             'usuario' => 'Armando',
+            'nombres' => 'Armando',
+            'apellidos' => 'Villamizar',
             'cargo' => 'Jefe de desarrollo',
             'correo' => 'armando@sistema.com',
             'telefono' => '123456',
-            'contrasenia' => 'a2020',
+            'contrasenia' => Util::cifrarClave('a2020'),
             'created_at' => date('Y-m-d')
         ]);
     }

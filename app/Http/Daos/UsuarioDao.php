@@ -37,4 +37,10 @@ class UsuarioDao extends Controller
         ->where('id_usuario', $id_usuario);
         return $usuario;
     }
+    public static function getUserByEmail($correo){
+        $usuario = DB::table('usuario')
+        ->where('correo', $correo)
+        ->first();
+        return $usuario;
+    }
 }

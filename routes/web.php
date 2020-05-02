@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'Usuario@getLogin')->name('getLogin');
-Route::post('/', 'Usuario@postLogin')->name('postLogin');
+Route::post('/login', 'Usuario@postLogin')->name('postLogin');
+
+
+Route::get('/administrador', 'Administrador@getIndex')->name('administrador.getIndex');
+Route::get('/administrador/usuarios', 'Administrador@getUsuariosIndex')->name('administrador.getUsuariosIndex');
