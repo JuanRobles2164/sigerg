@@ -21,7 +21,7 @@ class CreateRolPerfil extends Migration
             $table->timestamps();
 
             //FKs
-            $table->foreign('id_usuario')->references('id_usuario')->on('usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->foreign('id_rol')->references('id_rol')->on('rol');
             $table->foreign('id_perfil')->references('id_perfil')->on('perfil');
         });

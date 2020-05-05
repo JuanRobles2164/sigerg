@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Usuario@getLogin')->name('getLogin');
-Route::post('/login', 'Usuario@postLogin')->name('postLogin');
+Route::get('/', function () {
+    return view('welcome');
+});
 
+Auth::routes();
 
-Route::get('/administrador', 'Administrador@getIndex')->name('administrador.getIndex');
-Route::get('/administrador/usuarios', 'Administrador@getUsuariosIndex')->name('administrador.getUsuariosIndex');
+Route::get('/home', 'HomeController@index')->name('home');

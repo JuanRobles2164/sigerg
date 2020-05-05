@@ -26,7 +26,7 @@ class CreateOrdenDeCompra extends Migration
             $table->unsignedBigInteger('id_estado');
             $table->timestamps();
             //FKs
-            $table->foreign('id_usuario')->references('id_usuario')->on('usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->foreign('id_solicitud')->references('id_solicitud')->on('solicitud');
             $table->foreign('id_contratista')->references('id_contratista')->on('contratista');
             $table->foreign('id_estado')->references('id_estado')->on('estado');

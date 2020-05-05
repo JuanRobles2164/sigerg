@@ -24,7 +24,7 @@ class CreateRestaurante extends Migration
             //FKs
             $table->foreign('id_empresa')->references('id_empresa')->on('empresa');
             $table->foreign('id_ciudad')->references('id_ciudad')->on('ciudad');
-            $table->foreign('id_usuario')->references('id_usuario')->on('usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 

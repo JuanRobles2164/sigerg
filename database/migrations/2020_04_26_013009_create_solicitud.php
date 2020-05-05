@@ -25,7 +25,7 @@ class CreateSolicitud extends Migration
             $table->timestamps();
 
             //FKs
-            $table->foreign('id_usuario')->references('id_usuario')->on('usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->foreign('id_area')->references('id_area')->on('area');
             $table->foreign('id_restaurante')->references('id_restaurante')->on('restaurante');
             $table->foreign('id_visita')->references('id_visita')->on('visita');

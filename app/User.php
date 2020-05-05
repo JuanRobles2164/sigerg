@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    public static $GENERIC_PASS = 'SISTEMA_GERG_';
     use Notifiable;
 
     /**
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'nombres', 'apellidos', 'cargo', 'telefono', 'id_area'
     ];
 
     /**
