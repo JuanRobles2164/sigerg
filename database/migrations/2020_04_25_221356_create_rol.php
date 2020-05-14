@@ -21,9 +21,18 @@ class CreateRol extends Migration
         });
         DB::table('rol')
         ->insert([
-            ['rol' => 'Administrador del sistema'],
-            ['rol' => 'Administrador de restaurante'],
-            ['rol' => 'Líder de mantenimiento']
+            [
+            'rol' => 'Administrador del sistema',
+            'id_rol' => 1
+            ],
+            [
+            'rol' => 'Administrador de restaurante',
+            'id_rol' => 2
+            ],
+            [
+            'rol' => 'Líder de mantenimiento',
+            'id_rol' => 3   
+            ]
         ]);
     }
 
