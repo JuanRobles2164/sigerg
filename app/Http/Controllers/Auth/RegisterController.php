@@ -21,7 +21,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+    private static $GENERIC_PASS = 'SISTEMA_GERG_';
     use RegistersUsers;
 
     /**
@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'nombres' => ['required', 'string'], 
             'apellidos' => ['required', 'string'], 
             'cargo' => ['required', 'string'], 
-            'telefono' => ['required', 'string'], 
+            'telefono' => ['required'], 
         ]);
     }
 
@@ -68,7 +68,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'email' => $data['email'],
-            'password' => Hash::make(User::$GENERIC_PASS.''.$data['apellidos']),
+            'password' => Hash::make(self::$GENERIC_PASS.''.$data['telefono']),
             'nombres' => $data['nombres'], 
             'apellidos' => $data['apellidos'], 
             'cargo' => $data['cargo'], 
