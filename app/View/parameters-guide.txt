@@ -1,0 +1,27 @@
+SubmitButton => [
+    //Un botón para enviar datos por POST a formularios
+    Etiqueta: x-submit-button
+    Parametros => [
+        text: El texto que va a desplegar el botón (por defecto es "Crear")
+    ]
+]
+
+InputTextLabel => [
+    //Una entrada de formulario, puede ser; texto, emails, correos (No incluyen Text areas)
+    //Tambien incluye un label
+    Etiqueta: x-input-text-label
+    Parametros => [
+        field_name: Nombre del campo, para llenar labels y asignarle "name" al input principal
+        tipo: Tipo de dato a recibir, por defecto es "texto"
+        optional: Indica si el campo es opcional o no.
+        labelText: El texto que aparecerá en los label; Por defecto es el field_name con la incial mayúscula
+    ]
+]
+
+CreateForm => [
+    //Un formulario en donde todo los campos anteriores van a poder ser llenados
+    Etiqueta: x-create-form
+    Parametros => [
+        action: La ruta a la cual el formulario ha de enviar/realizar la petición.
+    ]
+]

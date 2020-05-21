@@ -17,21 +17,25 @@ class CreateRol extends Migration
         Schema::create('rol', function (Blueprint $table) {
             $table->bigIncrements('id_rol');
             $table->string('rol');
+            $table->string('abreviatura');
             $table->timestamps();
         });
         DB::table('rol')
         ->insert([
             [
             'rol' => 'Administrador del sistema',
-            'id_rol' => 1
+            'id_rol' => 1,
+            'abreviatura' => 'admin'
             ],
             [
-            'rol' => 'Administrador de restaurante',
-            'id_rol' => 2
+            'rol' => 'Lider de restaurante',
+            'id_rol' => 2,
+            'abreviatura' => 'lider restaurante'
             ],
             [
             'rol' => 'Líder de mantenimiento',
-            'id_rol' => 3   
+            'id_rol' => 3,
+            'abreviatura' => 'lider mantenimiento'
             ]
         ]);
     }

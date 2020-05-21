@@ -24,7 +24,12 @@ class RolesController extends Controller
             return $request->user();
         }else{
             //Redirigerá al rol que le corresponde
-            return $request->user()->roles;
+            $stringRedirect = null;
+            foreach($request->user()->roles as $role){
+                $stringRedirect = $role->abreviatura;
+            }
+            return redirect()->route($stringRedirect);
+            //return $request->user()->roles;
         }
     }
 }

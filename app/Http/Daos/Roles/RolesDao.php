@@ -9,7 +9,7 @@ class RolesDao {
         $roles = DB::table('rol_perfil')
         ->join('rol', 'rol_perfil.id_rol', '=', 'rol.id_rol')
         ->where('id_usuario', $id_usuario)
-        ->select('rol.rol', 'rol.id_rol')
+        ->select('rol.rol', 'rol.id_rol', 'rol.abreviatura')
         ->get();
         return $roles;
     }

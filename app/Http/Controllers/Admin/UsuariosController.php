@@ -37,7 +37,11 @@ class UsuariosController extends Controller
      * @return array User
      */
     public function index(Request $request){
-        $users = UsuariosDao::getAllUsuarios();
+        $paginado = 15;
+        if(isset($request->paginado)){
+            $paginado = $request->paginado;
+        }
+        $users = UsuariosDao::getAllUsuarios($paginado);
         $roles = UsuariosDao::getAllRoles();
         return view($this->ruta.'index')
         ->with(compact(
@@ -87,7 +91,7 @@ class UsuariosController extends Controller
     }
 
     /**
-     * Elimina un usuario en base al ID que reciba
+     * Deletes an user by its ID
      *
      * @param Request $request->id_usuario
      * @return JsonResponse
